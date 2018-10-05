@@ -59,7 +59,7 @@ def train(trainloader, model, criterion, optimizer):
         inputs, labels = inputs.cuda(), labels.cuda()
         inputs_var, labels_var = Variable(inputs), Variable(labels)
 
-        model.zero_grad()
+        optimizer.zero_grad()
         
         outputs = model(inputs_var)
         loss = criterion(outputs, labels_var)
